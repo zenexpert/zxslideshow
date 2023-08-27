@@ -9,19 +9,6 @@ $slides_sql = "SELECT * FROM " . TABLE_ZX_SLIDESHOW . "
 $slides = $db->Execute($slides_sql);
 ?>
 
-<?php
-$debug = false;
-//$debug = true;
-if ($debug) {
-    foreach ($slides as $slide) {
-        $slide_data = json_decode($slide['slide_data'], true);
-        echo '<pre>';
-        print_r($slide_data);
-        echo '</pre>';
-    }
-}
-?>
-
 <div class="home-slider-area">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
