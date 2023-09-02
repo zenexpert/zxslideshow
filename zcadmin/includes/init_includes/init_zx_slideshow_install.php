@@ -99,6 +99,20 @@ if (isset($_SESSION['admin_id'])) {
 
         $db->Execute(
             "INSERT INTO " . TABLE_CONFIGURATION . "
+                ( configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added, use_function, set_function )
+             VALUES
+                ('Lazy Load', 'ZX_SLIDESHOW_LAZY_LOAD', 'false', 'Use lazy image loading on slides? Relies on native browser lazy loading feature.', $cgi, 11, NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),')"
+        );
+
+        $db->Execute(
+            "INSERT INTO " . TABLE_CONFIGURATION . "
+                ( configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added, use_function, set_function )
+             VALUES
+                ('Keyboard Control', 'ZX_SLIDESHOW_KEYBOARD_CONTROL', 'true', 'Set to true to enable keyboard control for ADA/WCAG compatibility. When enabled it will control sliders that are currently in viewport.', $cgi, 12, NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),')"
+        );
+
+        $db->Execute(
+            "INSERT INTO " . TABLE_CONFIGURATION . "
                 (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, date_added, sort_order, set_function)
              VALUES
                 ('ZX Slideshow Version', 'ZX_SLIDESHOW_VERSION', '3.0.0', 'Currently installed version of ZX Slideshow.<br />Module brought to you by <a href=\"https://zenexpert.com\" target=\"_blank\">ZenExpert</a>', $cgi, now(), 100, 'trim(')"

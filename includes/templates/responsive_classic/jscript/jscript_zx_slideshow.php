@@ -17,6 +17,9 @@ if(ZX_SLIDESHOW_STATUS == 'true') {
                 delay: <?php echo ZX_SLIDESHOW_PAUSE; ?>,
             },
             <?php } ?>
+            <?php if(ZX_SLIDESHOW_KEYBOARD_CONTROL == 'true') { ?>
+            keyboard: true,
+            <?php } ?>
             effect: '<?php echo ZX_SLIDESHOW_EFFECT; ?>',
             direction: 'horizontal',
             speed: <?php echo ZX_SLIDESHOW_ANIM_SPEED; ?>,

@@ -16,12 +16,15 @@ $slides = $db->Execute($slides_sql);
             foreach ($slides as $slide) {
                 $slide_data = json_decode($slide['slide_data'], true);
 
+                $alt = [];
+
                 $style_slideTitlePos = $style_slideSubtitlePos = $style_slideLeadinPos = $style_slideTextPos = $style_slideButtonPos = '';
                 $style_slideTitle = $style_slideSubtitle = $style_slideLeadin = $style_slideText = $style_slideButton = '';
                 $animationsTitle = $animationsSubtitle = $animationsLeadin = $animationsText = $animationsButton = '';
 
                 // slide lead in
                 if (!empty($slide_data['slide_lead_in'])) {
+                    $alt[] = $slide_data['slide_lead_in'];
                     if ($slide_data['slide_lead_in_color'] != '#000000') $style_slideLeadin .= ' color: ' . $slide_data['slide_lead_in_color'] . ';';
                     if ($slide_data['slide_lead_in_position'] != 'left') $style_slideLeadin .= ' text-align: ' . $slide_data['slide_lead_in_position'] . ';';
                     if ($slide_data['slide_lead_in_size'] > 0) $style_slideLeadin .= ' font-size: ' . $slide_data['slide_lead_in_size'] . 'rem; line-height: ' . $slide_data['slide_lead_in_size'] . 'rem;';
@@ -37,6 +40,7 @@ $slides = $db->Execute($slides_sql);
 
                 // slide title
                 if (!empty($slide_data['slide_top_title'])) {
+                    $alt[] = $slide_data['slide_top_title'];
                     if ($slide_data['slide_top_title_color'] != '#000000') $style_slideTitle .= ' color: ' . $slide_data['slide_top_title_color'] . ';';
                     if ($slide_data['slide_top_title_position'] != 'left') $style_slideTitle .= ' text-align: ' . $slide_data['slide_top_title_position'] . ';';
                     if ($slide_data['slide_top_title_size'] > 0) $style_slideTitle .= ' font-size: ' . $slide_data['slide_top_title_size'] . 'rem; line-height: ' . $slide_data['slide_top_title_size'] . 'rem;';
@@ -52,6 +56,7 @@ $slides = $db->Execute($slides_sql);
 
                 // slide subtitle
                 if (!empty($slide_data['slide_subtitle'])) {
+                    $alt[] = $slide_data['slide_subtitle'];
                     if ($slide_data['slide_subtitle_color'] != '#000000') $style_slideSubtitle .= ' color: ' . $slide_data['slide_subtitle_color'] . ';';
                     if ($slide_data['slide_subtitle_position'] != 'left') $style_slideSubtitle .= ' text-align: ' . $slide_data['slide_subtitle_position'] . ';';
                     if ($slide_data['slide_subtitle_size'] > 0) $style_slideSubtitle .= ' font-size: ' . $slide_data['slide_subtitle_size'] . 'rem; line-height: ' . $slide_data['slide_subtitle_size'] . 'rem;';
@@ -67,6 +72,7 @@ $slides = $db->Execute($slides_sql);
 
                 // slide text
                 if (!empty($slide_data['slide_text'])) {
+                    $alt[] = $slide_data['slide_text'];
                     if ($slide_data['slide_text_color'] != '#000000') $style_slideText .= ' color: ' . $slide_data['slide_text_color'] . ';';
                     if ($slide_data['slide_text_position'] != 'left') $style_slideText .= ' text-align: ' . $slide_data['slide_text_position'] . ';';
                     if ($slide_data['slide_text_size'] > 0) $style_slideText .= ' font-size: ' . $slide_data['slide_text_size'] . 'rem; line-height: ' . $slide_data['slide_text_size'] . 'rem;';
@@ -82,6 +88,7 @@ $slides = $db->Execute($slides_sql);
 
                 // slide button
                 if (!empty($slide_data['button_text'])) {
+                    $alt[] = $slide_data['button_text'];
                     if ($slide_data['button_color'] != '#000000') $style_slideButton .= ' color: ' . $slide_data['button_color'] . ';';
                     if ($slide_data['button_color_bg'] != '#000000') $style_slideButton .= ' background-color: ' . $slide_data['button_color_bg'] . ';';
                     if ($slide_data['button_size'] > 0) $style_slideButton .= ' font-size: ' . $slide_data['button_size'] . 'rem; line-height: ' . $slide_data['button_size'] . 'rem;';
@@ -95,6 +102,8 @@ $slides = $db->Execute($slides_sql);
                     if ($slide_data['button_speed'] != 'default') $animationsButton .= ' animate__' . $slide_data['button_speed'];
                     if ($slide_data['button_delay'] != '0') $animationsButton .= ' animate__delay-' . $slide_data['button_delay'] . 's';
                 }
+
+                $alt_text = implode(' - ', $alt);
 
                 ?>
                 <div class="swiper-slide">
@@ -139,9 +148,17 @@ $slides = $db->Execute($slides_sql);
                     <?php } ?>
 
                     <div class="background-image">
-                        <img class="background-image__image" src="<?php echo DIR_WS_IMAGES . $slide['slide_image']; ?>"
-                             alt="A random unsplash image"/>
+                        <img class="background-image__image"
+                             src="<?php echo DIR_WS_IMAGES . $slide['slide_image']; ?>"
+                             alt="<?php echo $alt_text; ?>"
+                             <?php if(ZX_SLIDESHOW_LAZY_LOAD == 'true') {
+                                 echo ' loading="lazy"';
+                             } ?>
+                        />
                     </div>
+                    <?php if(ZX_SLIDESHOW_LAZY_LOAD == 'true') { ?>
+                        <div class="swiper-lazy-preloader"></div>
+                    <?php } ?>
                 </div>
 
 
