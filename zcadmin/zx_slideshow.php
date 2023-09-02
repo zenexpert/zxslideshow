@@ -385,6 +385,8 @@ if (!empty($action)) {
                     </div>
                 </div>
 
+                    <hr>
+
                 <div class="form-group">
                     <?php echo zen_draw_label(TEXT_SLIDE_LEAD_IN, 'slide_lead_in', 'class="col-sm-3 control-label"'); ?>
                     <div class="col-sm-9 col-md-9">
@@ -585,13 +587,16 @@ if (!empty($action)) {
 
                     </div>
                 </div>
-                <hr>
+
                 <div class="form-group">
                     <?php echo zen_draw_label(TEXT_SLIDE_URL, 'slide_url', 'class="col-sm-3 control-label"'); ?>
                     <div class="col-sm-9 col-md-9">
                         <?php echo zen_draw_input_field('slide_url', $sInfo->slide_url, zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_url') . ' class="form-control" id="slide_url"'); ?>
                     </div>
                 </div>
+
+                 <hr>
+
                 <div class="form-group">
                     <?php echo zen_draw_label(TEXT_SLIDE_GROUP, 'slide_group', 'class="col-sm-3 control-label"'); ?>
                     <div class="col-sm-9 col-md-9">
@@ -802,7 +807,6 @@ if (!empty($action)) {
 
                                 $contents[] = array('align' => 'text-center', 'text' => '<a href="' . zen_href_link(FILENAME_ZX_SLIDESHOW, 'page=' . $_GET['page'] . '&sID=' . $sInfo->slide_id . '&action=new') . '" class="btn btn-primary" role="button">' . IMAGE_EDIT . '</a> <a href="' . zen_href_link(FILENAME_ZX_SLIDESHOW, 'page=' . $_GET['page'] . '&sID=' . $sInfo->slide_id . '&action=del') . '" class="btn btn-warning" role="button">' . IMAGE_DELETE . '</a>');
                                 $contents[] = array('text' => TEXT_SLIDE_DATE_ADDED . ' ' . zen_date_short($sInfo->date_added));
-                                $contents[] = array('align' => 'text-center', 'text' => '<a href="' . zen_href_link(FILENAME_ZX_SLIDESHOW, 'page=' . $_GET['page'] . '&sID=' . $sInfo->slide_id) . '" class="btn btn-default" role="button">' . IMAGE_UPDATE . '</a>');
 
                                 $banner_id = $sInfo->slide_id;
 
@@ -839,7 +843,7 @@ if (!empty($action)) {
                     <tr>
                         <td class="text-right" colspan="2"><a
                                 href="<?php echo zen_href_link(FILENAME_ZX_SLIDESHOW, 'action=new'); ?>"
-                                class="btn btn-primary" role="button"><?php echo IMAGE_NEW_BANNER; ?></a></td>
+                                class="btn btn-primary" role="button"><?php echo IMAGE_NEW_SLIDE; ?></a></td>
                     </tr>
                 </table>
             </div>

@@ -43,10 +43,10 @@ $define = [
                     <p>Allows you to set a delay before the animation begins.</p>
                     <br>
                     <strong>Size (rem)</strong>
-                    <p>Allows you to set the font size of the element (in rem). You can find more information about rem <a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/" target="_blank">here</a>.<br>Leave blank or 0 to use default value set in css file.</p>
+                    <p>Allows you to set the font size of the element (in rem). You can find more information about rem <a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/" target="_blank">here</a>.<br>Leave blank or 0 to use default value set in css file. Original CSS values are: Lead In - 1, Top Title - 2, Subtitle - 1, Text - 1, Button - 1.</p>
                     <br>
                     <strong>Vertical</strong>
-                    <p>Allows you to position the element vertically using absolute positioning. You can set the percentage of distance from top. Use 1-99 to set your custom position. Leave blank or 0 to use default value set in css file.</p>
+                    <p>Allows you to position the element vertically using absolute positioning. You can set the percentage of distance from top. Use 1-99 to set your custom position. Leave blank or 0 to use default value set in css file. Original CSS values are: Lead In - 15, Top Title - 30, Subtitle - 50, Text - 70, Button - 90.</p>
                     <br>
                     <strong>Slide Group</strong>
                     <p>For home page, set the group to \'home\'.</p>
@@ -78,6 +78,7 @@ $define = [
     'IMAGE_ICON_SLIDE_OPEN_NEW_WINDOWS_OFF' => 'Open New Window - Disabled',
     'SUCCESS_SLIDE_OPEN_NEW_WINDOW_UPDATED' => 'Success: The status of the Slide to open in a new window has been updated.',
     'SUCCESS_SLIDE_ON_SSL_UPDATED' => 'Success: The status of the Slide to show on SSL has been updated.',
+    'IMAGE_NEW_SLIDE' => 'New Slide',
 ];
 
 return $define;
