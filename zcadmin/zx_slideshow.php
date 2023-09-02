@@ -129,6 +129,7 @@ if (!empty($action)) {
             $slide_data = json_encode($slide_data_array);
             $slide_image_local = zen_db_prepare_input($_POST['slide_image_local']);
             $slide_image_target = zen_db_prepare_input($_POST['slide_image_target']);
+            $slide_image_alt = zen_db_prepare_input($_POST['slide_image_alt']);
             $db_image_location = '';
             $expires_date_raw = zen_db_prepare_input($_POST['expires_date']);
             if (DATE_FORMAT_DATE_PICKER != 'yy-mm-dd' && !empty($expires_date_raw)) {
@@ -176,6 +177,7 @@ if (!empty($action)) {
                     'slide_data' => $slide_data,
                     'slide_url' => $slide_url,
                     'slide_image' => $db_image_location,
+                    'slide_image_alt' => $slide_image_alt,
                     'slide_group' => $slide_group,
                     'status' => $status,
                     'slide_open_new_windows' => $slide_open_new_windows,
@@ -306,6 +308,7 @@ if (!empty($action)) {
                 'slide_url' => '',
                 'slide_group' => '',
                 'slide_image' => '',
+                'slide_image_alt' => '',
                 'slide_data' => '',
                 'status' => 1,
             ];
@@ -317,7 +320,7 @@ if (!empty($action)) {
 
                 $sID = zen_db_prepare_input($_GET['sID']);
 
-                $slide = $db->Execute("SELECT slide_title, slide_url, slide_image, slide_group,
+                $slide = $db->Execute("SELECT slide_title, slide_url, slide_image, slide_image_alt, slide_group,
                                          slide_data, status,
                                          date_format(expires_date, '" . zen_datepicker_format_forsql() . "') AS expires_date,
                                          date_status_change, slide_open_new_windows, slide_sort_order
@@ -597,6 +600,9 @@ if (!empty($action)) {
                         <p><?php echo TEXT_SLIDE_NEW_GROUP; ?></p><?php echo zen_draw_input_field('new_slide_group', '', 'class="form-control" id="new_slide_group"', ((count($groups_array) > 0) ? false : true)); ?>
                     </div>
                 </div>
+
+                <hr>
+
                 <div class="form-group">
                     <?php echo zen_draw_label(TEXT_SLIDE_IMAGE, 'slide_image', 'class="col-sm-3 control-label"'); ?>
                     <div class="col-sm-9 col-md-9">
@@ -616,6 +622,15 @@ if (!empty($action)) {
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <?php echo zen_draw_label(TEXT_SLIDE_IMAGE_ALT, 'slide_image_alt', 'class="col-sm-3 control-label"'); ?>
+                    <div class="col-sm-9 col-md-9">
+                        <?php echo zen_draw_textarea_field('slide_image_alt', 'soft', '80', '10', htmlspecialchars($sInfo->slide_image_alt ?? '', ENT_COMPAT, CHARSET, TRUE), 'class="form-control" id="slide_image_alt"'); ?>
+                    </div>
+                </div>
+
+                <hr>
 
                 <div class="form-group">
                     <?php echo zen_draw_label(TEXT_SLIDE_ALL_SORT_ORDER, 'slide_sort_order', 'class="col-sm-3 control-label"'); ?>
@@ -647,30 +662,14 @@ if (!empty($action)) {
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-9 col-md-9">
-                        <?php echo TEXT_SLIDE_SLIDE_NOTE . '<br>' . TEXT_SLIDE_INSERT_NOTE . '<br>' . TEXT_SLIDE_EXPIRY_NOTE . '<br>'; ?>
+                        <?php echo TEXT_SLIDE_INSERT_NOTE . '<br>' . TEXT_SLIDE_EXPIRY_NOTE . '<br>'; ?>
                     </div>
                 </div>
                 <?php echo '</form>'; ?>
             </div>
                 <div class="col-xs-12 col-md-3" style="position: sticky; top: 0;">
-                    <h4>Legend</h4>
-                    <strong>Effect</strong>
-                    <p>All effects are powered by Animate.css and you can see the demo for each effect on the <a href="https://animate.style/" target="blank">official website</a>.</p>
-                    <br>
-                    <strong>Speed</strong>
-                    <p>Refers to animate-duration (default set to 1s). Slow = 2s, Slower = 3s, Fast = 800ms, Faster = 500ms</p>
-                    <br>
-                    <strong>Delay</strong>
-                    <p>Allows you to set a delay before the animation begins.</p>
-                    <br>
-                    <strong>Size (rem)</strong>
-                    <p>Allows you to set the font size of the element (in rem). You can find more information about rem <a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/" target="_blank">here</a>.<br>Leave blank or 0 to use default value set in css file.</p>
-                    <br>
-                    <strong>Vertical</strong>
-                    <p>Allows you to position the element vertically using absolute positioning. You can set the percentage of distance from top. Use 1-99 to set your custom position. Leave blank or 0 to use default value set in css file.</p>
-                    <br>
-                    <strong>Slide Group</strong>
-                    <p>For home page, set the group to 'home'.</p>
+                    <h4><?php echo TEXT_SLIDE_LEGEND; ?></h4>
+                    <?php echo TEXT_SLIDE_LEGEND_TEXT; ?>
                 </div>
             </div>
             <?php

@@ -19,12 +19,32 @@ $define = [
     'TEXT_SLIDE_IMAGE_LOCAL' => ', or enter local file below',
     'TEXT_SLIDE_IMAGE_TARGET' => 'Image Target (Save To):',
     'TEXT_SLIDE_IMAGE_TARGET_INFO' => '<strong>Suggested Target location for the image on the server:</strong> ' . DIR_FS_CATALOG_IMAGES . 'banners/',
+    'TEXT_SLIDE_IMAGE_ALT' => 'Image Alt Text: ',
     'TEXT_SLIDE_ALL_SORT_ORDER' => 'Sort Order',
     'TEXT_SLIDE_ALL_SORT_ORDER_INFO' => '<strong>NOTE: if left empty or 0, slides will be displayed at random order</strong>',
     'TEXT_SLIDE_EXPIRES_ON' => 'Expires On: <br>(Must be after today)',
-    'TEXT_SLIDE_SLIDE_NOTE' => '<b>Slide Notes:</b><ul><li>Use an image or HTML text for the Slide - not both.</li><li>HTML Text has priority over an image</li><li>HTML Text will not register the click thru, but will register displays</li><li>Banners with absolute image URLs should not be displayed on secure pages</li></ul>',
     'TEXT_SLIDE_INSERT_NOTE' => '<b>Image Notes:</b><ul><li>Uploading directories must have proper user (write) permissions setup!</li><li>Do not fill out the \'Save To\' field if you are not uploading an image to the webserver (ie, you are using a local (serverside) image).</li><li>The \'Save To\' field must be an existing directory with an ending slash (eg, banners/).</li></ul>',
     'TEXT_SLIDE_EXPIRY_NOTE' => '<b>Expiry Notes:</b><ul><li>Only one of the two fields should be submitted</li><li>If the Slide is not to expire automatically, then leave these fields blank</li></ul>',
+    'TEXT_SLIDE_LEGEND' => 'Legend',
+    'TEXT_SLIDE_LEGEND_TEXT' => '<strong>Effect</strong>
+                    <p>All effects are powered by Animate.css and you can see the demo for each effect on the <a href="https://animate.style/" target="blank">official website</a>.</p>
+                    <br>
+                    <strong>Speed</strong>
+                    <p>Refers to animate-duration (default set to 1s). Slow = 2s, Slower = 3s, Fast = 800ms, Faster = 500ms</p>
+                    <br>
+                    <strong>Delay</strong>
+                    <p>Allows you to set a delay before the animation begins.</p>
+                    <br>
+                    <strong>Size (rem)</strong>
+                    <p>Allows you to set the font size of the element (in rem). You can find more information about rem <a href="https://www.sitepoint.com/understanding-and-using-rem-units-in-css/" target="_blank">here</a>.<br>Leave blank or 0 to use default value set in css file.</p>
+                    <br>
+                    <strong>Vertical</strong>
+                    <p>Allows you to position the element vertically using absolute positioning. You can set the percentage of distance from top. Use 1-99 to set your custom position. Leave blank or 0 to use default value set in css file.</p>
+                    <br>
+                    <strong>Slide Group</strong>
+                    <p>For home page, set the group to \'home\'.</p>
+                    <strong>Image Alt Text</strong>
+                    <p>Add image alternative text for screen readers. This is required for <a href="https://www.w3.org/WAI/tutorials/images/" target="_blank">Accessibility</a> compliance (ADA/WCAG).<br>HINT: keep it simple, but as detailed as needed. Imagine the image was being described to you over the phone and you should understand what it is about.<br>If you don\'t add any alt text, it will be automatically generated from the title, subtitle, text and button text just for basic compliance, but keep in mind it\'s always better to have good quality alt text as it also helps with your SEO.</p>',
     'TEXT_SLIDE_STATUS' => 'Slide Status:',
     'TEXT_SLIDE_ACTIVE' => 'Active',
     'TEXT_SLIDE_NOT_ACTIVE' => 'Not Active',

@@ -103,7 +103,11 @@ $slides = $db->Execute($slides_sql);
                     if ($slide_data['button_delay'] != '0') $animationsButton .= ' animate__delay-' . $slide_data['button_delay'] . 's';
                 }
 
-                $alt_text = implode(' - ', $alt);
+                if(!empty($slide['slide_image_alt'])) {
+                    $alt_text = $slide['slide_image_alt'];
+                } else {
+                    $alt_text = implode(' - ', $alt);
+                }
 
                 ?>
                 <div class="swiper-slide">

@@ -128,6 +128,7 @@ if (isset($_SESSION['admin_id'])) {
  `slide_data` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
  `slide_url` varchar(255) NOT NULL DEFAULT '',
  `slide_image` varchar(255) NOT NULL DEFAULT '',
+ `slide_image_alt` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
  `slide_group` varchar(15) NOT NULL DEFAULT '',
  `expires_date` datetime DEFAULT NULL,
  `date_added` datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
