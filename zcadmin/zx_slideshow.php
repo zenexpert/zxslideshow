@@ -21,15 +21,15 @@ if (isset($_GET['page'])) {
 if (!empty($action)) {
     switch ($action) {
         case 'setflag':
-            if (($_GET['flagslide_enabled'] == '0') || ($_GET['flagslide_enabled'] == '1')) {
-                zx_set_slide_status($_GET['slideID'], $_GET['flagslide_enabled']);
+            if (($_GET['flag'] == '0') || ($_GET['flag'] == '1')) {
+                zx_set_slide_status($_GET['sID'], $_GET['flag']);
 
                 $messageStack->add_session(SUCCESS_SLIDE_STATUS_UPDATED, 'success');
             } else {
                 $messageStack->add_session(ERROR_UNKNOWN_STATUS_FLAG, 'error');
             }
 
-            zen_redirect(zen_href_link(FILENAME_ZX_SLIDESHOW, 'page=' . $_GET['page'] . '&slideID=' . $_GET['slideID']));
+            zen_redirect(zen_href_link(FILENAME_ZX_SLIDESHOW, 'page=' . $_GET['page'] . '&sID=' . $_GET['sID']));
             break;
 
         case 'insert': // deprecated
