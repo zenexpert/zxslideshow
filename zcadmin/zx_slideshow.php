@@ -393,31 +393,31 @@ if (!empty($action)) {
                     <div class="clearfix"></div>
                     <div class="col-sm-9 col-md-9 col-md-offset-3">
                         <div class="col-sm-12 col-md-4">
-                            <label>Effect</label>
+                            <label><?php echo TEXT_SLIDE_EFFECT; ?></label>
                             <?php echo zx_slideshow_menu('lead_in_effect', 'grouped', 'effects', $slide_data['slide_lead_in_effect'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Speed</label>
+                            <label><?php echo TEXT_SLIDE_SPEED; ?></label>
                             <?php echo zx_slideshow_menu('lead_in_speed', 'regular', 'speed', $slide_data['slide_lead_in_speed'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Delay</label>
+                            <label><?php echo TEXT_SLIDE_DELAY; ?></label>
                             <?php echo zx_slideshow_menu('lead_in_delay', 'regular', 'delay', $slide_data['slide_lead_in_delay'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Position</label>
+                            <label><?php echo TEXT_SLIDE_POSITION; ?></label>
                             <?php echo zx_slideshow_menu('lead_in_position', 'regular', 'position', $slide_data['slide_lead_in_position'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Size (rem)</label>
+                            <label><?php echo TEXT_SLIDE_SIZE_REM; ?></label>
                             <?php echo zen_draw_input_field('lead_in_size', $slide_data['slide_lead_in_size'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_lead_in_size"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Color</label>
+                            <label><?php echo TEXT_SLIDE_COLOR; ?></label>
                             <?php echo zen_draw_input_field('lead_in_color', $slide_data['slide_lead_in_color'] ?? '', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_lead_in_color"', false, 'color'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Vertical</label>
+                            <label><?php echo TEXT_SLIDE_VERTICAL; ?></label>
                             <?php echo zen_draw_input_field('lead_in_vertical', $slide_data['slide_lead_in_vertical'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_lead_in_vertical"'); ?>
                         </div>
 
@@ -432,31 +432,31 @@ if (!empty($action)) {
                     <div class="clearfix"></div>
                     <div class="col-sm-9 col-md-9 col-md-offset-3">
                         <div class="col-sm-12 col-md-4">
-                            <label>Effect</label>
+                            <label><?php echo TEXT_SLIDE_EFFECT; ?></label>
                             <?php echo zx_slideshow_menu('top_title_effect', 'grouped', 'effects', $slide_data['slide_top_title_effect'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Speed</label>
+                            <label><?php echo TEXT_SLIDE_SPEED; ?></label>
                             <?php echo zx_slideshow_menu('top_title_speed', 'regular', 'speed', $slide_data['slide_top_title_speed'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Delay</label>
+                            <label><?php echo TEXT_SLIDE_DELAY; ?></label>
                             <?php echo zx_slideshow_menu('top_title_delay', 'regular', 'delay', $slide_data['slide_top_title_delay'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Position</label>
+                            <label><?php echo TEXT_SLIDE_POSITION; ?></label>
                             <?php echo zx_slideshow_menu('top_title_position', 'regular', 'position', $slide_data['slide_top_title_position'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Size (rem)</label>
+                            <label><?php echo TEXT_SLIDE_SIZE_REM; ?></label>
                             <?php echo zen_draw_input_field('top_title_size', $slide_data['slide_top_title_size'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_top_title_size"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Color</label>
+                            <label><?php echo TEXT_SLIDE_COLOR; ?></label>
                             <?php echo zen_draw_input_field('top_title_color', $slide_data['slide_top_title_color'] ?? '', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_top_title_color"', false, 'color'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Vertical</label>
+                            <label><?php echo TEXT_SLIDE_VERTICAL; ?></label>
                             <?php echo zen_draw_input_field('top_title_vertical', $slide_data['slide_top_title_vertical'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_top_title_vertical"'); ?>
                         </div>
 
@@ -471,31 +471,31 @@ if (!empty($action)) {
                     <div class="clearfix"></div>
                     <div class="col-sm-9 col-md-9 col-md-offset-3">
                         <div class="col-sm-12 col-md-4">
-                            <label>Effect</label>
+                            <label><?php echo TEXT_SLIDE_EFFECT; ?></label>
                             <?php echo zx_slideshow_menu('subtitle_effect', 'grouped', 'effects', $slide_data['slide_subtitle_effect'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Speed</label>
+                            <label><?php echo TEXT_SLIDE_SPEED; ?></label>
                             <?php echo zx_slideshow_menu('subtitle_speed', 'regular', 'speed', $slide_data['slide_subtitle_speed'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Delay</label>
+                            <label><?php echo TEXT_SLIDE_DELAY; ?></label>
                             <?php echo zx_slideshow_menu('subtitle_delay', 'regular', 'delay', $slide_data['slide_subtitle_delay'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Position</label>
+                            <label><?php echo TEXT_SLIDE_POSITION; ?></label>
                             <?php echo zx_slideshow_menu('subtitle_position', 'regular', 'position', $slide_data['slide_subtitle_position'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Size (rem)</label>
+                            <label><?php echo TEXT_SLIDE_SIZE_REM; ?></label>
                             <?php echo zen_draw_input_field('subtitle_size', $slide_data['slide_subtitle_size'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_subtitle_size"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Color</label>
+                            <label><?php echo TEXT_SLIDE_COLOR; ?></label>
                             <?php echo zen_draw_input_field('subtitle_color', $slide_data['slide_subtitle_color'] ?? '', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_subtitle_color"', false, 'color'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Vertical</label>
+                            <label><?php echo TEXT_SLIDE_VERTICAL; ?></label>
                             <?php echo zen_draw_input_field('subtitle_vertical', $slide_data['slide_subtitle_vertical'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_subtitle_vertical"'); ?>
                         </div>
 
@@ -510,31 +510,31 @@ if (!empty($action)) {
                     <div class="clearfix"></div>
                     <div class="col-sm-9 col-md-9 col-md-offset-3">
                         <div class="col-sm-12 col-md-4">
-                            <label>Effect</label>
+                            <label><?php echo TEXT_SLIDE_EFFECT; ?></label>
                             <?php echo zx_slideshow_menu('text_effect', 'grouped', 'effects', $slide_data['slide_text_effect'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Speed</label>
+                            <label><?php echo TEXT_SLIDE_SPEED; ?></label>
                             <?php echo zx_slideshow_menu('text_speed', 'regular', 'speed', $slide_data['slide_text_speed'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Delay</label>
+                            <label><?php echo TEXT_SLIDE_DELAY; ?></label>
                             <?php echo zx_slideshow_menu('text_delay', 'regular', 'delay', $slide_data['slide_text_delay'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Position</label>
+                            <label><?php echo TEXT_SLIDE_POSITION; ?></label>
                             <?php echo zx_slideshow_menu('text_position', 'regular', 'position', $slide_data['slide_text_position'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Size (rem)</label>
+                            <label><?php echo TEXT_SLIDE_SIZE_REM; ?></label>
                             <?php echo zen_draw_input_field('text_size', $slide_data['slide_text_size'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_text_size"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Color</label>
+                            <label><?php echo TEXT_SLIDE_COLOR; ?></label>
                             <?php echo zen_draw_input_field('text_color', $slide_data['slide_text_color'] ?? '', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_text_color"', false, 'color'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Vertical</label>
+                            <label><?php echo TEXT_SLIDE_VERTICAL; ?></label>
                             <?php echo zen_draw_input_field('text_vertical', $slide_data['slide_text_vertical'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="slide_text_vertical"'); ?>
                         </div>
 
@@ -549,28 +549,28 @@ if (!empty($action)) {
                     <div class="clearfix"></div>
                     <div class="col-sm-9 col-md-9 col-md-offset-3">
                         <div class="col-sm-12 col-md-4">
-                            <label>Effect</label>
+                            <label><?php echo TEXT_SLIDE_EFFECT; ?></label>
                             <?php echo zx_slideshow_menu('button_effect', 'grouped', 'effects', $slide_data['button_effect'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Speed</label>
+                            <label><?php echo TEXT_SLIDE_SPEED; ?></label>
                             <?php echo zx_slideshow_menu('button_speed', 'regular', 'speed', $slide_data['button_speed'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <label>Delay</label>
+                            <label><?php echo TEXT_SLIDE_DELAY; ?></label>
                             <?php echo zx_slideshow_menu('button_delay', 'regular', 'delay', $slide_data['button_delay'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Position</label>
+                            <label><?php echo TEXT_SLIDE_POSITION; ?></label>
                             <?php echo zx_slideshow_menu('button_position', 'regular', 'position', $slide_data['button_position'] ?? '', 'class="form-control"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Size (rem)</label>
+                            <label><?php echo TEXT_SLIDE_SIZE_REM; ?></label>
                             <?php echo zen_draw_input_field('button_size', $slide_data['button_size'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="button_size"'); ?>
                         </div>
                         <div class="col-sm-12 col-md-3">
                             <div class="col-xs-6">
-                                <label>Color</label>
+                                <label><?php echo TEXT_SLIDE_COLOR; ?></label>
                                 <?php echo zen_draw_input_field('button_color', $slide_data['button_color'] ?? '', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="button_color"', false, 'color'); ?>
                             </div>
                             <div class="col-xs-6">
@@ -579,7 +579,7 @@ if (!empty($action)) {
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-3">
-                            <label>Vertical</label>
+                            <label><?php echo TEXT_SLIDE_VERTICAL; ?></label>
                             <?php echo zen_draw_input_field('button_vertical', $slide_data['button_vertical'] ?? '0', zen_set_field_length(TABLE_ZX_SLIDESHOW, 'slide_title') . ' class="form-control" id="button_vertical"'); ?>
                         </div>
 
